@@ -1,4 +1,5 @@
 import java.util.LinkedHashMap;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -138,6 +139,20 @@ public class Main {
         System.out.println("Enemy has chosen Onix!");
         return validPokemon;
     }
+
+
+    private Pokemon getEnemysRandomPokemon(Pokemon[] pokemonList){
+        Random random = new Random();
+        Pokemon randomPokemon = null;
+        int randomIndex = random.nextInt(pokemonList.length);
+        for(int i = 0; i < pokemonList.length; i++){
+            if(i == randomIndex){
+                randomPokemon = pokemonList[i];
+            }
+        }
+        return randomPokemon;
+    }
+
 
     private static void cleanupBattle() {
         System.out.println("The battle has ended");
